@@ -1,0 +1,13 @@
+<template name="toimialat_form">
+    <form id="toimialat_form"> 
+        <div class="form-group {{#if error 'toimiala'}}has-error{{/if}}">
+<label for="toimiala" class="control-label">Toimiala *</label>
+<input type="text" id="toimiala" value="{{toimiala}}" placeholder="Toimiala" class="form-control">
+<span class="help-block">{{error "toimiala"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'toimialatIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+

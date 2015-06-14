@@ -1,0 +1,19 @@
+<template name="kunnatUpdate">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Etusivu</a></li>
+            <li><a href="{{pathFor 'kunnatIndex'}}">Kunnat</a></li>
+            <li class="active">päivitä</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Päivitä</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> kunnat_form model}}  
+        </div>        
+    </div>
+</template>

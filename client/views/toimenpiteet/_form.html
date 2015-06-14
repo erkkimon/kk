@@ -1,0 +1,57 @@
+<template name="toimenpiteet_form">
+  <form id="toimenpiteet_form">
+    <div class="form-group {{#if error 'kunta'}}has-error{{/if}}">
+      <label for="kunta" class="control-label">Kunta *</label>
+      <select id="kunta" class="form-control">
+        <option value=""></option>
+        {{#each kunnat}}
+        <option value="{{kunta}}"> {{kunta}} </option>
+        {{/each}}
+      </select>
+      <span class="help-block">{{error "kunta"}}</span>
+    </div>
+    <div class="form-group {{#if error 'toimiala'}}has-error{{/if}}">
+      <label for="toimiala" class="control-label">Toimiala *</label>
+      <select id="toimiala" class="form-control">
+        <option value=""></option>
+        {{#each toimialat}}
+        <option value="{{toimiala}}"> {{toimiala}} </option>
+        {{/each}}
+      </select>
+      <span class="help-block">{{error "toimiala"}}</span>
+    </div>
+    <div class="form-group {{#if error 'toimenpide'}}has-error{{/if}}">
+      <label for="toimenpide" class="control-label">Toimenpide *</label>
+      <input type="text" id="toimenpide" value="{{toimenpide}}" placeholder="Toimenpide" class="form-control">
+      <span class="help-block">{{error "toimenpide"}}</span>
+    </div>
+    <div class="form-group {{#if error 'tilanne'}}has-error{{/if}}">
+      <label for="tilanne" class="control-label">Tilanne *</label>
+      <select id="tilanne" class="form-control">
+        <option value=""></option>
+        {{#each tilanteet}}
+        <option value="{{tilanne}}" {{selected ../tilanne}}>{{tilanne}}</option>
+        {{/each}}
+      </select>
+      <span class="help-block">{{error "tilanne"}}</span>
+    </div>
+    <div class="form-group {{#if error 'suunnitelma'}}has-error{{/if}}">
+      <label for="suunnitelma" class="control-label">Toimintasuunnitelma / aikataulu *</label>
+      <input type="text" id="suunnitelma" value="{{suunnitelma}}" placeholder="Toimintasuunnitelma / aikataulu" class="form-control">
+      <span class="help-block">{{error "suunnitelma"}}</span>
+    </div>
+    <div class="form-group {{#if error 'paivitetty'}}has-error{{/if}}">
+      <label for="paivitetty" class="control-label">Tilanne päivitetty *</label>
+      <input type="text" id="paivitetty" value="{{meteorisFormatterDate paivitetty 'L'}}" placeholder="Tilanne päivitetty" class="form-control">
+      <span class="help-block">{{error "paivitetty"}}</span>
+    </div>
+    <div class="form-group {{#if error 'yhteys'}}has-error{{/if}}">
+      <label for="yhteys" class="control-label">Yhteyshenkilö kunnassa *</label>
+      <input type="text" id="yhteys" value="{{yhteys}}" placeholder="Yhteyshenkilö kunnassa" class="form-control">
+      <span class="help-block">{{error "yhteys"}}</span>
+    </div>
+
+    <button id="btnSave" type="submit" class="btn btn-success">Tallenna</button>
+    <a href="{{pathFor 'toimenpiteetIndex'}}" class="btn btn-default">Takaisin</a>
+  </form>
+</template>

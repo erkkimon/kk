@@ -1,0 +1,19 @@
+<template name="tilanteetUpdate">
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'tilanteetIndex'}}">Tilanteet</a></li>
+            <li class="active">update</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Update Tilanteet</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> tilanteet_form model}}  
+        </div>        
+    </div>
+</template>

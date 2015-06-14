@@ -1,0 +1,88 @@
+<template name="toimenpiteetView">
+  <div class="container">
+    <!--Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li><a href="{{pathFor 'sitesIndex'}}">Etusivu</a>
+      </li>
+      <li><a href="{{pathFor 'toimenpiteetIndex'}}">Tavoitteet</a>
+      </li>
+      <li class="active">näytä tavoite</li>
+    </ol>
+
+    {{#with model}}
+    <div class="title">
+      <div class="jumbotron text-center"><p class="lead">{{toimenpide}}</p></div>
+      <div class="toolbar pull-right">
+        <a href="{{pathFor 'toimenpiteetIndex'}}" class="btn btn-default">Takaisin</a>
+        <a href="{{pathFor 'toimenpiteetUpdate'}}" class="btn btn-info">Päivitä tavoitetta</a>
+        <a id="btnRemove" class="btn btn-danger">Poista tavoite</a>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><b>Kunta</b>
+          </td>
+          <td>{{kunta}}</td>
+        </tr>
+        <tr>
+          <td><b>Toimiala</b>
+          </td>
+          <td>{{toimiala}}</td>
+        </tr>
+        <tr>
+          <td><b>Tavoite</b>
+          </td>
+          <td>{{toimenpide}}</td>
+        </tr>
+        <tr>
+          <td><b>TIlanne</b>
+          </td>
+          <td>{{tilanne}}</td>
+        </tr>
+        <tr>
+          <td><b>Toimintasuunnitelma / aikataulu</b>
+          </td>
+          <td>{{suunnitelma}}</td>
+        </tr>
+        <tr>
+          <td><b>Tilanne päivitetty</b>
+          </td>
+          <td>{{meteorisFormatter 'date' paivitetty}}</td>
+        </tr>
+        <tr>
+          <td><b>Yhteyshenkilö kunnassa</b>
+          </td>
+          <td>{{yhteys}}</td>
+        </tr>
+
+        <!--                <tr>
+                    <td><b>Image</b></td>
+                    <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
+                </tr>                -->
+        <tr>
+          <td><b>Tavoite lisätty</b>
+          </td>
+          <td>{{meteorisFormatter "dateTime" createdAt}}</td>
+        </tr>
+        <tr>
+          <td><b>Tavoitetta päivitetty</b>
+          </td>
+          <td>{{meteorisFormatter "dateTime" updatedAt}}</td>
+        </tr>
+        <tr>
+          <td><b>Lisääjä</b>
+          </td>
+          <td>{{createdUser.profile.name}}</td>
+        </tr>
+        <tr>
+          <td><b>Päivättänyt</b>
+          </td>
+          <td>{{updatedUser.profile.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+    {{/with}}
+  </div>
+</template>

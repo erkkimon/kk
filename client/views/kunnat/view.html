@@ -1,0 +1,58 @@
+<template name="kunnatView">
+  <div class="container">
+    <!--Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li><a href="{{pathFor 'sitesIndex'}}">Etusivu</a>
+      </li>
+      <li><a href="{{pathFor 'kunnatIndex'}}">Kunnat</a>
+      </li>
+      <li class="active">view</li>
+    </ol>
+
+    {{#with model}}
+    <div class="title">
+      <h3 class="pull-left">{{kunta}}</h3>
+      <div class="toolbar pull-right">
+        <a href="{{pathFor 'kunnatIndex'}}" class="btn btn-default">Takaisin</a>
+        <a href="{{pathFor 'kunnatUpdate'}}" class="btn btn-info">Päivitä</a>
+        <a id="btnRemove" class="btn btn-danger">Poista</a>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><b>Kunta</b>
+          </td>
+          <td>{{kunta}}</td>
+        </tr>
+
+        <!--                <tr>
+                    <td><b>Image</b></td>
+                    <td><img src="{{#if image}}{{app "baseUrl"}}{{image.url}}{{else}}{{app "baseUrl"}}/images/noimage.jpg{{/if}}"/></td>
+                </tr>                -->
+        <tr>
+          <td><b>Lisätty</b>
+          </td>
+          <td>{{meteorisFormatter "dateTime" createdAt}}</td>
+        </tr>
+        <tr>
+          <td><b>Päivitetty</b>
+          </td>
+          <td>{{meteorisFormatter "dateTime" updatedAt}}</td>
+        </tr>
+        <tr>
+          <td><b>Luonut</b>
+          </td>
+          <td>{{createdUser.profile.name}}</td>
+        </tr>
+        <tr>
+          <td><b>Päivittänyt</b>
+          </td>
+          <td>{{updatedUser.profile.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+    {{/with}}
+  </div>
+</template>

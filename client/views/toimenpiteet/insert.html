@@ -1,0 +1,19 @@
+<template name="toimenpiteetInsert">    
+    <div class="container">
+        <!--Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li><a href="{{pathFor 'sitesIndex'}}">Home</a></li>
+            <li><a href="{{pathFor 'toimenpiteetIndex'}}">Toimenpiteet</a></li>
+            <li class="active">lisää</li>
+        </ol>
+
+        <div id="basic-form">
+            <div class="title">
+                <h3 class="pull-left">Lisää toimenpide</h3>
+            </div>
+            <div class="clearfix"></div>
+
+            {{> toimenpiteet_form}}  
+        </div>        
+    </div>
+</template>

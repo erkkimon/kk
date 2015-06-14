@@ -1,0 +1,13 @@
+<template name="tilanteet_form">
+    <form id="tilanteet_form"> 
+        <div class="form-group {{#if error 'tilanne'}}has-error{{/if}}">
+<label for="tilanne" class="control-label">Tilanne *</label>
+<input type="text" id="tilanne" value="{{tilanne}}" placeholder="Tilanne" class="form-control">
+<span class="help-block">{{error "tilanne"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'tilanteetIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+

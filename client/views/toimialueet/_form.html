@@ -1,0 +1,23 @@
+<template name="toimialueet_form">
+    <form id="toimialueet_form"> 
+        <div class="form-group {{#if error 'liikuntakasvatus'}}has-error{{/if}}">
+<label for="liikuntakasvatus" class="control-label">Liikuntakasvatus </label>
+<input type="text" id="liikuntakasvatus" value="{{liikuntakasvatus}}" placeholder="Liikuntakasvatus" class="form-control">
+<span class="help-block">{{error "liikuntakasvatus"}}</span>
+</div>
+<div class="form-group {{#if error 'liikuntatoiminta'}}has-error{{/if}}">
+<label for="liikuntatoiminta" class="control-label">Liikuntatoiminta </label>
+<input type="text" id="liikuntatoiminta" value="{{liikuntatoiminta}}" placeholder="Liikuntatoiminta" class="form-control">
+<span class="help-block">{{error "liikuntatoiminta"}}</span>
+</div>
+<div class="form-group {{#if error 'varhaiskasvatus'}}has-error{{/if}}">
+<label for="varhaiskasvatus" class="control-label">Varhaiskasvatus </label>
+<input type="text" id="varhaiskasvatus" value="{{varhaiskasvatus}}" placeholder="Varhaiskasvatus" class="form-control">
+<span class="help-block">{{error "varhaiskasvatus"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'toimialueetIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+

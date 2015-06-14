@@ -1,0 +1,13 @@
+<template name="kunnat_form">
+    <form id="kunnat_form"> 
+        <div class="form-group {{#if error 'kunta'}}has-error{{/if}}">
+<label for="kunta" class="control-label">Kunta *</label>
+<input type="text" id="kunta" value="{{kunta}}" placeholder="Kunta" class="form-control">
+<span class="help-block">{{error "kunta"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Päivitä</button>                
+        <a href="{{pathFor 'kunnatIndex'}}" class="btn btn-default">Takaisin</a>                        
+    </form>
+</template>
+

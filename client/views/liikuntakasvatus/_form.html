@@ -1,0 +1,53 @@
+<template name="liikuntakasvatus_form">
+    <form id="liikuntakasvatus_form"> 
+        <div class="form-group {{#if error 'toimenpide'}}has-error{{/if}}">
+<label for="toimenpide" class="control-label">Toimenpide *</label>
+<select id="toimenpide" class="form-control">
+<option value=""></option>
+{{#each kunnat}}
+<option value="{{_id}}" {{selected ../toimenpide}}>{{name}} Using kunnat.name here for record "{{_id}}". Correct it in the file : client/views/liikuntakasvatus/_form.html</option>
+{{/each}}
+</select>
+<span class="help-block">{{error "toimenpide"}}</span>
+</div>
+<div class="form-group {{#if error 'tilanne'}}has-error{{/if}}">
+<label for="tilanne" class="control-label">Tilanne *</label>
+<select id="tilanne" class="form-control">
+<option value=""></option>
+{{#each liikuntakasvatus}}
+<option value="{{_id}}" {{selected ../tilanne}}>{{name}} Using liikuntakasvatus.name here for record "{{_id}}". Correct it in the file : client/views/liikuntakasvatus/_form.html</option>
+{{/each}}
+</select>
+<span class="help-block">{{error "tilanne"}}</span>
+</div>
+<div class="form-group {{#if error 'toimintasuunnitelma'}}has-error{{/if}}">
+<label for="toimintasuunnitelma" class="control-label">Toimintasuunnitelma / AIkataulu *</label>
+<select id="toimintasuunnitelma" class="form-control">
+<option value=""></option>
+{{#each liikuntakasvatus}}
+<option value="{{_id}}" {{selected ../toimintasuunnitelma}}>{{name}} Using liikuntakasvatus.name here for record "{{_id}}". Correct it in the file : client/views/liikuntakasvatus/_form.html</option>
+{{/each}}
+</select>
+<span class="help-block">{{error "toimintasuunnitelma"}}</span>
+</div>
+<div class="form-group {{#if error 'paivitetty'}}has-error{{/if}}">
+<label for="paivitetty" class="control-label">Tilanne päivitetty *</label>
+<input type="text" id="paivitetty" value="{{meteorisFormatterDate paivitetty 'L'}}" placeholder="Tilanne päivitetty" class="form-control">
+<span class="help-block">{{error "paivitetty"}}</span>
+</div>
+<div class="form-group {{#if error 'yhteyshenkilo'}}has-error{{/if}}">
+<label for="yhteyshenkilo" class="control-label">Yhteyshenkilö kunnassa *</label>
+<select id="yhteyshenkilo" class="form-control">
+<option value=""></option>
+{{#each liikuntakasvatus}}
+<option value="{{_id}}" {{selected ../yhteyshenkilo}}>{{name}} Using liikuntakasvatus.name here for record "{{_id}}". Correct it in the file : client/views/liikuntakasvatus/_form.html</option>
+{{/each}}
+</select>
+<span class="help-block">{{error "yhteyshenkilo"}}</span>
+</div>
+
+        <button id="btnSave" type="submit" class="btn btn-success">Submit</button>                
+        <a href="{{pathFor 'liikuntakasvatusIndex'}}" class="btn btn-default">Back</a>                        
+    </form>
+</template>
+
